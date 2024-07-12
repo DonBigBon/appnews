@@ -4,6 +4,11 @@ plugins {
     kotlin("kapt")
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
+
 android {
     namespace = "com.example.appnews"
     compileSdk = 34
@@ -53,17 +58,17 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.lifecycle.viewmodel.ktx.v220)
-    implementation(libs.androidx.room.runtime.v225)
-    kapt("androidx.room:room-compiler:2.2.5")
-    implementation(libs.androidx.room.ktx.v225)
-    implementation(libs.kotlinx.coroutines.core.v135)
-    implementation(libs.kotlinx.coroutines.android.v135)
-    implementation(libs.androidx.lifecycle.runtime.ktx.v220)
-    implementation(libs.retrofit.v260)
-    implementation(libs.converter.gson.v260)
-    implementation(libs.logging.interceptor)
-    implementation(libs.navigation.fragment.ktx.v221)
-    implementation(libs.navigation.ui.ktx.v221)
-    implementation(libs.glide.v4110)
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.3")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.5.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    implementation("com.github.bumptech.glide:glide:4.12.0")
     kapt("com.github.bumptech.glide:compiler:4.11.0")
 }
